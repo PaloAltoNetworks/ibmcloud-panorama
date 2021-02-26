@@ -1,5 +1,5 @@
 ##############################################################################
-# This file creates the compute instance for the Palo Alto Networks VM-Series
+# This file creates the compute instance for the Palo Alto Networks Panorama
 ##############################################################################
 
 ##############################################################################
@@ -17,7 +17,7 @@ data "ibm_is_instance_profile" "vnf_profile" {
 }
 
 ##############################################################################
-# Create Palo Alto Networks VM-Series VSI.
+# Create Palo Alto Networks Panorama VSI.
 ##############################################################################
 
 //security group
@@ -74,15 +74,15 @@ resource "ibm_is_instance" "vnf_vsi" {
     security_groups = [ibm_is_security_group.vnf_security_group.id]
   }
   
-  network_interfaces {
-    name   = "eth1"
-    subnet = data.ibm_is_subnet.vnf_subnet2.id
-  }
+ # network_interfaces {
+ #   name   = "eth1"
+#    subnet = data.ibm_is_subnet.vnf_subnet2.id
+#  }
 
-  network_interfaces {
-    name   = "eth2"
-    subnet = data.ibm_is_subnet.vnf_subnet3.id
-  }
+ # network_interfaces {
+ #   name   = "eth2"
+ #   subnet = data.ibm_is_subnet.vnf_subnet3.id
+  #}
 
   vpc  = data.ibm_is_subnet.vnf_subnet1.vpc
   zone = data.ibm_is_subnet.vnf_subnet1.zone
