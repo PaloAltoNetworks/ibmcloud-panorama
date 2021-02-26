@@ -50,13 +50,13 @@ Fill in the following values, based on the steps that you completed before you b
 | Key | Definition | Value Example |
 | --- | ---------- | ------------- | 
 | `region` | The VPC region that you want your VPC virtual servers to be provisioned. | "us-south" |
-| `vnf_cos_image_url` | This is the vendor COS image SQL URL where the image(Panorama qcow2 image) is located. This is to copy the image from COS to VPC custom image in your IBM Cloud account VPC Infrastructure. First time, the image needs to be copied to your VPC cloud account. | "cos://us-east/palo-alto/PA-VM-KVM-10.0.1.qcow2" |
+| `vnf_cos_image_url` | This is the vendor COS image SQL URL where the image(Panorama qcow2 image) is located. This is to copy the image from COS to VPC custom image in your IBM Cloud account VPC Infrastructure. First time, the image needs to be copied to your VPC cloud account. | "cos://us-east/palo-alto/Panorama-KVM-10.0.4.qcow2" |
 | `vnf_profile` | The profile of compute CPU and memory resources to be used when provisioning the vnf instance. To list available profiles, run `ibmcloud is instance-profiles`. | "bx2-8x32" |
 | `subnet_id1` | The ID of the subnet(management) which will be associated with first interface of the VNF instance. Click on the subnet details in the VPC Subnet Listing to determine this value | "0717-xxxxxx-xxxx-xxxxx-8fae-xxxxx" |
-| `vnf_security_group` | The name of the security group to which the VNF Instance's first interface(management) belong to | "vm-series-mgmt-sg" |
-| `vnf_vpc_image_name` | The starting name of the Panorama qcow2 Custom Image to be provisioned in your IBM Cloud account and (if already available) to be used to create the Panorama virtual server instance. The name is appended with UUID, to create a unique custom image for every run. | "vm-series-fw-image" |
-| `vnf_instance_name` | The name of the VNF instance to be provisioned. | "vm-series-fw-vsi" |
-| `ssh_key_name` | The name of your public SSH key to be used for VSI. Follow [Public SSH Key Doc](https://cloud.ibm.com/docs/vpc-on-classic-vsi?topic=vpc-on-classic-vsi-ssh-keys) for creating and managing ssh key. | "vm-series-ssh-key" |
+| `vnf_security_group` | The name of the security group to which the VNF Instance's first interface(management) belong to | "panorama-mgmt-sg" |
+| `vnf_vpc_image_name` | The starting name of the Panorama qcow2 Custom Image to be provisioned in your IBM Cloud account and (if already available) to be used to create the Panorama virtual server instance. The name is appended with UUID, to create a unique custom image for every run. | "panorama-image" |
+| `vnf_instance_name` | The name of the VNF instance to be provisioned. | "panorama-vsi" |
+| `ssh_key_name` | The name of your public SSH key to be used for VSI. Follow [Public SSH Key Doc](https://cloud.ibm.com/docs/vpc-on-classic-vsi?topic=vpc-on-classic-vsi-ssh-keys) for creating and managing ssh key. | "panorama-ssh-key" |
 
 
 ## Notes
